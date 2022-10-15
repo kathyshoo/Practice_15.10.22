@@ -42,10 +42,10 @@ public class Main {
             System.out.println("Неправильно");
         }
     }
-
+    
     public static void zadacha1(){
-        double temp = (101 + 0) / 3;
-        boolean temp_ = false;
+        double temp = (101 + 0) / 3.0;
+        boolean temp_;
         System.out.println("a) (101 + 0) / 3 = " + temp);
         temp = 3.06e-6 * 10000000.1;
         System.out.println("b) 3.06e-6 * 10000000.1 = " + temp);
@@ -155,14 +155,12 @@ public class Main {
         }
         System.out.println("a * b = " + otvet);
     }
-
     public static void zadacha7(){
         long[] mas = new long[100];
         long[] chet = new long[100];
         long[] nechet = new long[100];
         int tempc=0;
         int tempn=0;
-        boolean ol = true;
         for (int i=0; i<100; i++){
             mas[i] = (int) (Math.random()*5000);
         }
@@ -187,17 +185,41 @@ public class Main {
     }
     public static void zadacha8(){
         Scanner input = new Scanner(System.in);
-        System.out.print("Введите температуру в Фарегнейтах");
+        System.out.print("Введите температуру в Фарегнейтах: ");
         double a = input.nextDouble();
-
+        double b = (a - 32) * 5 / 9;
+        System.out.println(a + " градусов Фаренгейта = " + String.format("%.1f",b) + " градусов Цельсия");
     }
     public static void zadacha9(){
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("Введите ваш вес: ");
+        double m = input.nextDouble();
+        System.out.print("Введите ваш рост: ");
+        double h = input.nextDouble();
+        System.out.println("Индекса массы вашего тела - " + m / (h * h));
     }
     public static void zadacha10(){
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("Введите a: ");
+        double a = input.nextDouble();
+        System.out.println("Квадрат a = " + a*a);
+        System.out.println("Куб a = " + a*a*a);
+        System.out.println("a в 4 степени = " + a*a*a*a);
     }
     public static void zadacha11(){
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("Введите длину AB: ");
+        int a = input.nextInt();
+        System.out.print("Введите длину BC: ");
+        int b = input.nextInt();
+        System.out.print("Введите длину AC: ");
+        int c = input.nextInt();
+        boolean rig = (a < b*c) & (b < a*c) & (c < a*b);
+        if (rig){
+            System.out.print("Правильные длины сторон треугольника");
+        }
+        else {
+            System.out.print("Неправильные длины сторон треугольника");
+        }
     }
 }
